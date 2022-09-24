@@ -71,7 +71,6 @@ ${sortedArray
         process.exit();
       }
 
-
       // Check for errors within latitude values
       if (lat.length === 0) {
         console.error("There is a missing latitude value somewhere, please check your input file again.");
@@ -103,7 +102,13 @@ ${sortedArray
         console.error("One of the longitude values falls outside the acceptable range, please check your input file again.");
         process.exit();
       }
-      return `\t<wpt lat="${+lat}" lon="${+lon}">\n\t\t<name>${loc.trim()}</name>\n\t</wpt>`;;
+
+      if (loc.length === 0) {
+        console.error("There is a missing location somewhere, please check your input file again.");
+        process.exit();
+      }
+
+        return `\t<wpt lat="${+lat}" lon="${+lon}">\n\t\t<name>${loc.trim()}</name>\n\t</wpt>`;;
     })
     .join(`\n`)
   }
@@ -112,7 +117,6 @@ ${sortedArray
 
 const GPX = (contents) => {
   const coordsArray = contents.split("\r\n").filter(uniqueResults); // Comment out .filter(unique) if you accept multiple of the same values
-  console.log(coordsArray);
   var sortedArray;
   sortedArray = coordsArray.map((coords) => {
     const [lat, lon, loc] = coords.split(",");
@@ -121,4 +125,5 @@ const GPX = (contents) => {
 
   return generateGPX(sortedArray);
 };
+
 module.exports = GPX;
