@@ -13,7 +13,7 @@ LatitudeOfPoint2,LongitudeOfPoint2,Point2WaypointName
 *  Latitude **must be** ≥ -90 or ≤ 90 (Decimals allowed.)
 * Longitude **must be** ≥ -180 or ≤ 180 (Decimals allowed.)
 * Waypoint name *should* accept all values
-* All duplicate values will be removed
+* All duplicate values will be removed unless stated otherwise. Refer to line 115 of [index.js](index.js) if you wish to accept duplicate values.
 
 # How will the output look like?
 ```xml
