@@ -112,7 +112,7 @@ ${sortedArray
 
 
 const GPX = (contents) => {
-  const coordsArray = contents.split("\r\n").filter(uniqueResults); // Comment out .filter(unique) if you accept multiple of the same values
+  const coordsArray = contents.split("\r\n").filter(uniqueResults); // Comment out .filter(uniqueResults) if you accept duplicate values
   var sortedArray;
   sortedArray = coordsArray.map((coords) => {
     const [lat, lon, loc] = coords.split(",");
