@@ -1,3 +1,5 @@
+const C = require('chalk');
+
 // Comment out this function if you accept multiple of the same values
 function uniqueResults(value, index, self) {
   return self.indexOf(value) === index;
@@ -15,39 +17,39 @@ ${sortedArray
 
       // Check for empty lines
       if (lat.length === 0 && lon.length === 0) {
-        console.log("There is an empty line somewhere, please check  your input file again.");
+        console.error(C.redBright("There is an empty line somewhere, please check  your input file again."));
         process.exit();
       }
 
       // Check for errors within latitude values
       if (lat.length === 0) {
-        console.error("There is a missing latitude value somewhere, please check your input file again.");
-        process.exit()
+        console.error(C.redBright("There is a missing latitude value somewhere, please check your input file again."));
+        process.exit();
       }
 
       if (isNaN(lat)) {
-        console.error("One of the latitude values is not a number, please check your input file again.");
+        console.error(C.redBright("One of the latitude values is not a number, please check your input file again."));
         process.exit();
       }
 
       if (lat > 90 || lat < -90) {
-        console.error("One of the latitude values falls outside the acceptable range, please check your input file again.");
+        console.error(C.redBright("One of the latitude values falls outside the acceptable range, please check your input file again."));
         process.exit();
       }
 
       // Check for errors within longitude values
       if (lon.length === 0) {
-        console.error("There is a missing longitude value somewhere, please check your input file again.");
-        process.exit()
+        console.error(C.redBright("There is a missing longitude value somewhere, please check your input file again."));
+        process.exit();
       }
 
       if (isNaN(lon)) {
-        console.error("One of the longitude values is not a number, please check your input file again.");
+        console.error(C.redBright("One of the longitude values is not a number, please check your input file again."));
         process.exit();
       }
 
       if (lon > 180 || lat < -180) {
-        console.error("One of the longitude values falls outside the acceptable range, please check your input file again.");
+        console.error(C.redBright("One of the longitude values falls outside the acceptable range, please check your input file again."));
         process.exit();
       }
 
@@ -67,44 +69,44 @@ ${sortedArray
 
 
       if (lat.length === 0 && lon.length === 0 && loc.length === 0) {
-        console.log("There is an empty line somewhere, please check  your input file again.");
+        console.error(C.redBright("There is an empty line somewhere, please check  your input file again."));
         process.exit();
       }
 
       // Check for errors within latitude values
       if (lat.length === 0) {
-        console.error("There is a missing latitude value somewhere, please check your input file again.");
-        process.exit()
+        console.error(C.redBright("There is a missing latitude value somewhere, please check your input file again."));
+        process.exit();
       }
 
       if (isNaN(lat)) {
-        console.error("One of the latitude values is not a number, please check your input file again.");
+        console.error(C.redBright("One of the latitude values is not a number, please check your input file again."));
         process.exit();
       }
 
       if (lat > 90 || lat < -90) {
-        console.error("One of the latitude values falls outside the acceptable range, please check your input file again.");
+        console.error(C.redBright("One of the latitude values falls outside the acceptable range, please check your input file again."));
         process.exit();
       }
 
       // Check for errors within longitude values
       if (lon.length === 0) {
-        console.error("There is a missing longitude value somewhere, please check your input file again.");
-        process.exit()
+        console.error(C.redBright("There is a missing longitude value somewhere, please check your input file again."));
+        process.exit();
       }
 
       if (isNaN(lon)) {
-        console.error("One of the longitude values is not a number, please check your input file again.");
+        console.error(C.redBright("One of the longitude values is not a number, please check your input file again."));
         process.exit();
       }
 
       if (lon > 180 || lat < -180) {
-        console.error("One of the longitude values falls outside the acceptable range, please check your input file again.");
+        console.error(C.redBright("One of the longitude values falls outside the acceptable range, please check your input file again."));
         process.exit();
       }
 
       if (loc.length === 0) {
-        console.error("There is a missing location somewhere, please check your input file again.");
+        console.error(C.redBright("There is a missing location somewhere, please check your input file again."));
         process.exit();
       }
 

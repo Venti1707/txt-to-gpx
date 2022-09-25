@@ -1,4 +1,6 @@
-console.time("Time taken");
+const C = require("chalk");
+
+console.time(C.magentaBright("Time taken"));
 var fs = require("fs");
 var index = require("./index.js");
 
@@ -9,13 +11,13 @@ const args = process.argv.slice(2).reduce((acc, arg) => {
 }, {});
 
 if (!fs.existsSync(`${args["input"]}.txt`)) {
-  console.log("The input file you specified does not exist.");
-  console.timeEnd("Time taken");
+  console.error(C.redBright("The input file you specified does not exist."));
+  console.timeEnd(C.magentaBright("Time taken"));
   process.exit();
 }
 if (args["output"] == undefined) {
-  console.log("You did not specify an output file name. Please try again.");
-  console.timeEnd("Time taken");
+  console.error(C.redBright("You did not specify an output file name. Please try again."));
+  console.timeEnd(C.magentaBright("Time taken"));
   process.exit();
 }
 
@@ -28,12 +30,12 @@ function saveRoute() {
   const contents = fs.readFileSync(`${args["input"]}.txt`, "utf8");
   const data = index(contents);
   saveToFile(data);
-  console.log("Your GPX route has been saved.");
-  console.timeEnd("Time taken");
+  console.log(C.greenBright("Your GPX route has been saved."));
+  console.timeEnd(C.magentaBright("Time taken"));
 }
 
 if (fs.existsSync(`${args["output"]}.gpx`)) {
-  console.warn("The output file already exists and has been overwritten.");
+  console.warn(C.hex("#FFA500")("The output file already exists and has been overwritten."));
   saveRoute();
 } else {
   saveRoute();
