@@ -15,12 +15,6 @@ ${sortedArray
       lat = lat.trim();
       lon = lon.trim();
 
-      // Check for empty lines
-      if (lat.length === 0 && lon.length === 0) {
-        console.error(C.redBright("There is an empty line somewhere, please check  your input file again."));
-        process.exit();
-      }
-
       // Check for errors within latitude values
       if (lat.length === 0) {
         console.error(C.redBright("There is a missing latitude value somewhere, please check your input file again."));
@@ -110,7 +104,7 @@ ${sortedArray
         process.exit();
       }
 
-        return `\t<wpt lat="${+lat}" lon="${+lon}">\n\t\t<name>${loc.trim()}</name>\n\t</wpt>`;;
+      return `\t<wpt lat="${+lat}" lon="${+lon}">\n\t\t<name>${loc.trim()}</name>\n\t</wpt>`;;
     })
     .join(`\n`)
   }
