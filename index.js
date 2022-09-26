@@ -61,12 +61,6 @@ ${sortedArray
       lon = lon.trim();
       loc = loc.trim();
 
-
-      if (lat.length === 0 && lon.length === 0 && loc.length === 0) {
-        console.error(C.redBright("There is an empty line somewhere, please check  your input file again."));
-        process.exit();
-      }
-
       // Check for errors within latitude values
       if (lat.length === 0) {
         console.error(C.redBright("There is a missing latitude value somewhere, please check your input file again."));
