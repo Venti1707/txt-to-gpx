@@ -147,12 +147,13 @@ ${sortedArray
         process.exit();
       }
 
-      if (loc.length === 0) {
-        console.error(C.redBright("There is a missing location somewhere, please check your input file again."));
+      // Check for errors within location values
+      if (loc == "undefined") {
+        console.log(C.redBright("There is a missing location somewhere, please check your input file again."));
         process.exit();
       }
 
-      return `\t<wpt lat="${+lat}" lon="${+lon}">\n\t\t<name>${loc.trim()}</name>\n\t</wpt>`;;
+      return `\t<wpt lat="${+lat}" lon="${+lon}">\n\t\t<name>${loc.trim()}</name>\n\t</wpt>`;
     })
     .join(`\n`)
   }
