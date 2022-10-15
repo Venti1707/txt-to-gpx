@@ -149,7 +149,7 @@ ${sortedArray
 
       // Check for errors within location values
       if (loc == "undefined") {
-        console.log(C.redBright("There is a missing location somewhere, please check your input file again."));
+        console.error(C.redBright("There is a missing location somewhere, please check your input file again."));
         process.exit();
       }
 
