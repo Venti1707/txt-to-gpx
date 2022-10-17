@@ -1,6 +1,5 @@
 const C = require('chalk');
 
-// Comment out this function if you accept multiple of the same values
 function uniqueResults(value, index, self) {
   return self.indexOf(value) === index;
 }
