@@ -45,7 +45,6 @@ ${sortedArray
       }
 
       if (lon > 180 || lon < -180) {
-        console.log(lon);
         console.error(C.redBright("One of the longitude values falls outside the acceptable range, please check your input file again."));
         process.exit();
       }
