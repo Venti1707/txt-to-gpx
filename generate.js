@@ -36,6 +36,7 @@ function saveRoute() {
 
 if (fs.existsSync(`${args["output"]}.gpx`)) {
   console.warn(C.hex("#FFA500")("The output file already exists and has been overwritten."));
+  fs.unlinkSync(`${args["output"]}.geojson`); // Delete the existing geojson file if the user has installed the Geo Data Viewer on Visual Studio Code and decides to preview the map (The extension does not delete the previous GEOJSON file)
   saveRoute();
 } else {
   saveRoute();
