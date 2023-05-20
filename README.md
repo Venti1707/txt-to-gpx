@@ -58,7 +58,7 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 * Clone the repository
 * Use ```node generate input=INPUT_FILE_NAME output=OUTPUT_FILE_NAME``` to generate the GPX file
     * ```INPUT_FILE_NAME``` is the name of the file to read the coordinates from; It **must** be a .txt file
-    * ```OUTPUT_FILE_NAME``` is the name of the output file
+    * ```OUTPUT_FILE_NAME``` is the name of the output file; It is optional. If you choose to leave it blank, it will default to ```INPUT_FILE_NAME```
 
 # Known bugs
 * None so far!
