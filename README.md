@@ -17,9 +17,16 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 
 # How will the output look like?
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <!-- GPX begins -->
-<gpx version="1.1">
+<gpx
+	version="1.1"
+	xmlns="http://www.topografix.com/GPX/1/1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+>
+
 	<!-- Route begins -->
 	<rte>
 		<!-- Route point begins -->
@@ -49,8 +56,8 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 	</wpt>
     <!-- More <wpt> and <name> tags here -->
 	<!-- Waypoints and name ends -->
+
 </gpx>
-<!-- GPX ends -->
 ```
 
 # How do I begin using the program?

@@ -6,10 +6,14 @@ function uniqueResults(value, index, self) {
 
 const generateGPX = (sortedArray) =>
   `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <!-- GPX begins -->
-<gpx version="1.1"
+<gpx
+	version="1.1"
 	xmlns="http://www.topografix.com/GPX/1/1"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+>
 \t<!-- Route begins -->
 \t<rte>
 \t\t<!-- Route point begins -->
@@ -159,9 +163,9 @@ ${sortedArray
     .join(`\n`)
   }
 \t<!-- Waypoints and name ends -->
+
 </gpx>
 <!-- GPX ends -->`;
-
 
 const GPX = (contents) => {
   const coordsArray = contents.split("\r\n").filter(uniqueResults); // Comment out .filter(uniqueResults) if you accept duplicate values
