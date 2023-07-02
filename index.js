@@ -6,7 +6,6 @@ function uniqueResults(value, index, self) {
 
 const generateGPX = (sortedArray) =>
   `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-
 <!-- GPX begins -->
 <gpx
 	version="1.1"
@@ -163,7 +162,6 @@ ${sortedArray
     .join(`\n`)
   }
 \t<!-- Waypoints and name ends -->
-
 </gpx>
 <!-- GPX ends -->`;
 

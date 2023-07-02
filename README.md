@@ -26,7 +26,6 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
 >
-
 	<!-- Route begins -->
 	<rte>
 		<!-- Route point begins -->
@@ -56,7 +55,6 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 	</wpt>
     <!-- More <wpt> and <name> tags here -->
 	<!-- Waypoints and name ends -->
-
 </gpx>
 ```
 
