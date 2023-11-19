@@ -13,7 +13,7 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 *  Latitude **must be** ≥ -90 or ≤ 90 (Decimals allowed.)
 * Longitude **must be** ≥ -180 or ≤ 180 (Decimals allowed.)
 * Location name *should* accept all values
-* All duplicate values will be removed unless stated otherwise. Refer to line 115 of [index.js](index.js) if you wish to accept duplicate values.
+* All duplicate values will be removed unless stated otherwise. Refer to line 169 of [index.js](index.js) if you wish to accept duplicate values.
 
 # How will the output look like?
 ```xml
@@ -62,7 +62,8 @@ LatitudeOfPoint2,LongitudeOfPoint2,LocationOfPoint2
 * Download Node.js [here](https://nodejs.org/en/)
 * Clone the repository
 * Use ```node generate input=INPUT_FILE_NAME output=OUTPUT_FILE_NAME``` to generate the GPX file
-    * ```INPUT_FILE_NAME``` is the name of the file to read the coordinates from; It **must** be a .txt file
+* Use ```node generate input=INPUT_FILE_NAME output=OUTPUT_FILE_NAME``` to generate the GEOJSON file
+    * ```INPUT_FILE_NAME``` is the name of the file to read the coordinates from (You can include the .txt or leave it out); It **must** be a .txt file
     * ```OUTPUT_FILE_NAME``` is the name of the output file; It is optional. If you choose to leave it blank, it will default to ```INPUT_FILE_NAME```
 
 # Known bugs
