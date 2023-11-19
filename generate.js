@@ -10,14 +10,24 @@ const args = process.argv.slice(2).reduce((acc, arg) => {
   return acc;
 }, {});
 
-if (!fs.existsSync(`${args["input"]}.txt`)) {
+const inputFilePath = `${args["input"]}.txt`;
+if (!fs.existsSync(args["input"]) && !fs.existsSync(inputFilePath)) {
   console.error(C.redBright("The input file you specified does not exist."));
   console.timeEnd(C.magentaBright("Time taken"));
   process.exit();
 }
+
+if (fs.existsSync(inputFilePath)) {
+  args["input"] = inputFilePath;
+}
+
 if (args["output"] === undefined) {
-  const inputFileName = args["input"].split(".")[0];
-  args["output"] = inputFileName;
+  const lastDotIndex = args["input"].lastIndexOf(".");
+  if (lastDotIndex !== -1) {
+    args["output"] = args["input"].slice(0, lastDotIndex);
+  } else {
+    args["output"] = args["input"];
+  }
   console.warn(C.hex("#FFA500")(`You did not specify an output file name. The input file name has been used as a default.`));
 }
 
@@ -30,17 +40,13 @@ const saveToFile = (data) => {
 };
 
 function saveRoute() {
-  const contents = fs.readFileSync(`${args["input"]}.txt`, "utf8");
+  const contents = fs.readFileSync(args["input"], "utf8");
   const data = index(contents);
   saveToFile(data);
 }
 
 if (fs.existsSync(`${args["output"]}.gpx`)) {
   console.warn(C.hex("#FFA500")("The output file already exists and has been overwritten."));
-
-  // The following code is used to check if there is an existing GeoJSON file if the user has installed the
-  // Geo Data Viewer extension on Visual Studio Code and decides to preview the map
-  // (The extension does not delete the previous GeoJSON file)
 
   if (fs.existsSync(`${args["output"]}.geojson`)) {
     fs.unlinkSync(`${args["output"]}.geojson`);
