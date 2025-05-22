@@ -1,4 +1,4 @@
-const C = require('chalk');
+import C from "chalk";
 
 function uniqueResults(value, index, self) {
   return self.indexOf(value) === index;
@@ -117,7 +117,7 @@ ${sortedArray
       var [lat, lon, loc] = p.split(",");
       lat = lat.trim();
       lon = lon.trim();
-      loc = loc.trim();
+      loc = loc.replace(/(\r\n|\n|\r)/gm, " ").trim();
 
       // Check for errors within latitude values
       if (lat.length === 0) {
@@ -166,7 +166,7 @@ ${sortedArray
 <!-- GPX ends -->`;
 
 const GPX = (contents) => {
-  const coordsArray = contents.split("\r\n").filter(uniqueResults); // Comment out .filter(uniqueResults) if you accept duplicate values
+  const coordsArray = contents.split(/\r?\n/).filter((line) => line.trim() !== "").filter(uniqueResults); // Comment out .filter(uniqueResults) if you accept duplicate values
   var sortedArray;
   sortedArray = coordsArray.map((coords) => {
     const [lat, lon, loc] = coords.split(",");
@@ -176,4 +176,5 @@ const GPX = (contents) => {
   return generateGPX(sortedArray);
 };
 
-module.exports = GPX;
+// module.exports = GPX;
+export default GPX;
