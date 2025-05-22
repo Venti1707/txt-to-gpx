@@ -1,8 +1,8 @@
-const C = require("chalk");
+import C from "chalk";
 
 console.time(C.magentaBright("Time taken"));
-var fs = require("fs");
-var index = require("./index.js");
+import fs from "fs";
+import index from "./index.js"
 
 const args = process.argv.slice(2).reduce((acc, arg) => {
   const [k, v] = arg.split("=");
